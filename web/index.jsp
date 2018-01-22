@@ -1,7 +1,7 @@
 <%-- 
     Document   : index
     Created on : Jan 22, 2018, 2:01:38 PM
-    Author     : Rawa
+    Author     : Rawa Jalal, Steven Ye, Jakob Chrisholm
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
