@@ -1,7 +1,7 @@
 <%-- 
     Document   : RJSYJCBanner
     Created on : Jan 23, 2018, 12:50:51 PM
-    Author     : Rawa
+    Author     : Rawa Jalal, Steven Ye, Jakob Chrisholm
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -22,5 +22,4 @@
             <div class="nav-item"><a href="RJSYJCRegister.jsp">Register</a></div>
             <div class="nav-item"><a href="RJSYJCAdmin.jsp">Admin</a></div>
         </div>
-    </body>
-</html>
+
