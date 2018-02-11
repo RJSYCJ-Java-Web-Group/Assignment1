@@ -1,5 +1,5 @@
 <%-- 
-    Document   : RJSYJCAdmin
+    Document   : JYCAdmin
     Created on : Jan 23, 2018, 3:29:12 PM
     Author     : Rawa Jalal, Steven Ye, Jakob Chrisholm
 --%>

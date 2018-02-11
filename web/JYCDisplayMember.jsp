@@ -1,12 +1,12 @@
 <%-- 
-    Document   : RJSYJCDisplayMember
+    Document   : JYCDisplayMember
     Created on : 29-Jan-2018, 1:37:42 PM
     Author     : jakob
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<jsp:include page="/includes/RJSYJCBanner.jsp"/>
+<jsp:include page="/includes/JYCBanner.jsp"/>
 
 <section>
     <h2>Thanks for joining our club!</h2>
@@ -19,8 +19,8 @@
         <br><label>Year Level:</label><%= request.getParameter("yearLevel")%>
     </div>
     <p>To register another member, click on the back button in your browser or the Return button shown below</p>
-    <form action="RJSYJCRegister.jsp">   
+    <form action="JYCRegister.jsp">   
         <button type="submit">Return</button>
     </form>
 </section>
-<jsp:include page="/includes/RJSYJCFooter.jsp"/>
+<jsp:include page="/includes/JYCFooter.jsp"/>

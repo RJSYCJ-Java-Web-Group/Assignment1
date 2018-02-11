@@ -1,5 +1,5 @@
 <%-- 
-    Document   : RJSYJCFooter
+    Document   : JYCFooter
     Created on : Jan 23, 2018, 3:11:03 PM
     Author     : Rawa Jalal, Steven Ye, Jakob Chrisholm
 --%>

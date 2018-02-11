@@ -6,6 +6,6 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>RJSYJCIndex.jsp</welcome-file>
+        <welcome-file>JYCIndex.jsp</welcome-file>
     </welcome-file-list>
 </web-app>
