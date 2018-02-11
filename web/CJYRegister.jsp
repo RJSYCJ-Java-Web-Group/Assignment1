@@ -1,17 +1,17 @@
 <%-- 
-    Document   : JYCRegister
+    Document   : CJYRegister
     Created on : Jan 23, 2018, 3:29:02 PM
-    Author     : Rawa Jalal, Steven Ye, Jakob Chrisholm
+    Author     : Jakob Chisholm, Rawa Jalal, Steven Ye
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<jsp:include page="/includes/JYCBanner.jsp"/>
+<jsp:include page="/includes/CJYBanner.jsp"/>
 
 <section>
     <h2>New Member Registration Form</h2>
     <br>
-    <form method="POST" action="JYCDisplayMember.jsp">
+    <form method="POST" action="CJYDisplayMember.jsp">
         <div class="form-group">
             <label for="fullName">Full Name: </label><input type="text" id="fullName" name="fullName" size="25" required/>
         </div>
@@ -50,4 +50,4 @@
     </form>
 </section>
 
-<jsp:include page="/includes/JYCFooter.jsp"/>
+<jsp:include page="/includes/CJYFooter.jsp"/>

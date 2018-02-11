@@ -1,7 +1,7 @@
 <%-- 
-    Document   : JYCAdmin
+    Document   : CJYAdmin
     Created on : Jan 23, 2018, 3:29:12 PM
-    Author     : Rawa Jalal, Steven Ye, Jakob Chrisholm
+    Author     : Jakob Chisholm, Rawa Jalal, Steven Ye
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -9,9 +9,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>CJY Computer Programming Club</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Not implemented yet</h1>
     </body>
 </html>
