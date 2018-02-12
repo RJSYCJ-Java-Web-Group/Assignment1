@@ -26,6 +26,7 @@ a {
 }
 .nav-item{
     padding:0 1rem;
+    border-left:0.1rem solid black;
 }
 
 section {
@@ -45,6 +46,7 @@ section {
     margin-left:0.25rem;
 }
 footer {
+    border-top:0.1rem solid black;
     display:flex;
     justify-content: flex-end;
 }

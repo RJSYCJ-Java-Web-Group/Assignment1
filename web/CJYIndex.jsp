@@ -14,8 +14,8 @@
     <p>Pair Programming Team:</p>
     <h3>Assignment 1</h3>
     <h3>Driver: Rawa Jalal</h3>
-    <h3>Observer: </h3>
-    <h3>Tester: </h3>
+    <h3>Observer: Jakob Chisholm</h3>
+    <h3>Tester: Steven Ye</h3>
     <br>
     <p>Current Date and Time:</p>
     <h3><%= new java.util.Date()%></h3>
