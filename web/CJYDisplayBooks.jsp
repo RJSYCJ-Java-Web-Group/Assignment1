@@ -6,21 +6,30 @@
 <head>
     <%@page contentType="text/html" pageEncoding="UTF-8"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <link rel="stylesheet" href="styles/site.css" type="text/css"/>
 </head>
     
 <jsp:include page="/includes/CJYBanner.jsp"/>
 
 <section>
     <h2>List of Books</h2>
-    <table style="border: 1px solid black;">
+    <table>
         <c:forEach items="${books}" var="book">
+            <tr style="font-weight: bold;">
+                <th>Code</th>
+                <th>Description</th>
+                <th>Quantity</th>
+            </tr>
             <tr>
-                <td style="border: 1px solid black;">${book.code}</td>
-                <td style="border: 1px solid black;">${book.description}</td>
-                <td style="border: 1px solid black;">${book.quantity}</td>
+                <td>${book.code}</td>
+                <td>${book.description}</td>
+                <td>${book.quantity}</td>
             </tr>
         </c:forEach>
     </table>
+    <form action="CJYAddBook.jsp">
+        <input type="submit" value="Add Book"/>
+    </form>
 </section>
 
 <jsp:include page="/includes/CJYFooter.jsp"/>
