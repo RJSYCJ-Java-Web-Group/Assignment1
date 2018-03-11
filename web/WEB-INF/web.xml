@@ -22,4 +22,14 @@
         <servlet-name>CJYDisplayBooksServlet</servlet-name>
         <url-pattern>/CJYDisplayBooks</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>CJYAddBookServlet</servlet-name>
+        <servlet-class>club.admin.CJYAddBookServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>CJYAddBookServlet</servlet-name>
+        <url-pattern>/CJYAddBook</url-pattern>
+    </servlet-mapping>
 </web-app>
