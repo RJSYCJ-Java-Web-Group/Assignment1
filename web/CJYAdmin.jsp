@@ -7,11 +7,14 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+    <jsp:include page="/includes/CJYBanner.jsp"/>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>CJY Computer Programming Club</title>
     </head>
     <body>
-        <h1>Not implemented yet</h1>
+        <h2>Admin : Data Maintenance</h2>
+        <a href="CJYDisplayBooks.jsp">Maintain Books</a>
     </body>
+    <jsp:include page="/includes/CJYFooter.jsp"/>
 </html>
