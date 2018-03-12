@@ -18,7 +18,7 @@ import club.data.BookIO;
 
 /**
  *
- * @author jakob
+ * @author Jakob Chisholm, Rawa Jalal, Steven Ye
  */
 public class CJYDisplayBooksServlet extends HttpServlet {
 

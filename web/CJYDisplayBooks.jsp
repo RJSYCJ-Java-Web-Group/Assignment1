@@ -1,7 +1,7 @@
 <%-- 
     Document   : CJYDisplayBooks
     Created on : 11-Mar-2018, 10:54:53 AM
-    Author     : jakob
+    Author     : Jakob Chisholm, Rawa Jalal, Steven Ye
 --%>
 <head>
     <%@page contentType="text/html" pageEncoding="UTF-8"%>

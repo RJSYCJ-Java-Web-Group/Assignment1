@@ -1,7 +1,7 @@
 <%-- 
     Document   : CJYAddBook
     Created on : 11-Mar-2018, 12:10:03 PM
-    Author     : jakob
+    Author     : Jakob Chisholm, Rawa Jalal, Steven Ye
 --%>
 
 <head>
