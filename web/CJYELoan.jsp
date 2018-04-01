@@ -1,7 +1,12 @@
 <%-- 
     Document   : CJYELoan
+<<<<<<< HEAD
     Created on : 1-Apr-2018, 7:17:53 PM
     Author     : jakob
+=======
+    Created on : Apr 1, 2018, 6:06:55 PM
+    Author     : Jakob Chisholm, Rawa Jalal, Steven Ye
+>>>>>>> a392a08a2c9e1b986a013fff057f290a332fee48
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

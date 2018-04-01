@@ -5,8 +5,12 @@
  */
 package club.cart;
 
+import club.business.Book;
+import club.business.ELoan;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -42,6 +46,13 @@ public class CJYClubLoanServlet extends HttpServlet {
             out.println("</body>");
             out.println("</html>");
         }
+        ServletContext servletContext = this.getServletContext();
+        String path = servletContext.getInitParameter("booksFilePath");
+        ArrayList<Book> loanitems = (ArrayList<Book>)servletContext.getAttribute("loanitems");
+        if (loanitems ==null){
+            loanitems = ELoan.loadItems(path);
+        }
+        servletContext.getRequestDispatcher("/CJYELoan.jsp").forward(request,response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
