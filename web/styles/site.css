@@ -50,3 +50,12 @@ footer {
     display:flex;
     justify-content: flex-end;
 }
+
+th, td {
+    padding: 5px;
+}
+
+.errorMessage {
+    color: red;
+    font-style: italic;
+}
