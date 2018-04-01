@@ -19,7 +19,7 @@
         <div class="navbar">
             <div class="nav-item"><a href="CJYIndex.jsp">Home</a></div>
             <div class="nav-item"><a href="CJYRegister.jsp">Register</a></div>
-            <div class="nav-item"><a href="CJYLoan.jsp">eLoan</a></div>
+            <div class="nav-item"><a href="CJYLoan">eLoan</a></div>
             <div class="nav-item"><a href="CJYCart.jsp">eCart</a></div>
             <div class="nav-item"><a href="CJYAdmin.jsp">Admin</a></div>
         </div>

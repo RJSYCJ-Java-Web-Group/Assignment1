@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <servlet-mapping>
+        <servlet-name>CJYClubLoanServlet</servlet-name>
+        <url-pattern>/CJYLoan</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CYJCart</servlet-name>
+        <url-pattern>/CYJCart</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
@@ -8,31 +16,38 @@
     <welcome-file-list>
         <welcome-file>CJYIndex.jsp</welcome-file>
     </welcome-file-list>
-    
+    <context-param>
+        <param-name>booksFilePath</param-name>
+        <param-value>/WEB-INF/books.txt</param-value>
+    </context-param>
     <servlet>
         <servlet-name>CJYDisplayBooksServlet</servlet-name>
         <servlet-class>club.admin.CJYDisplayBooksServlet</servlet-class>
         <init-param>
             <param-name>relativePathToFile</param-name>
             <param-value>/WEB-INF/books.txt</param-value>
-        </init-param> 
+        </init-param>
     </servlet>
-
+    <servlet>
+        <servlet-name>CJYClubLoanServlet</servlet-name>
+        <servlet-class>club.cart.CJYClubLoanServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CYJCart</servlet-name>
+        <servlet-class>club.cart.CYJCart</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CJYDisplayBooksServlet</servlet-name>
         <url-pattern>/CJYDisplayBooks</url-pattern>
     </servlet-mapping>
-    
     <servlet>
         <servlet-name>CJYAddBookServlet</servlet-name>
         <servlet-class>club.admin.CJYAddBookServlet</servlet-class>
     </servlet>
-    
     <servlet-mapping>
         <servlet-name>CJYAddBookServlet</servlet-name>
         <url-pattern>/CJYAddBook</url-pattern>
     </servlet-mapping>
-    
     <error-page>
         <exception-type>java.lang.Throwable</exception-type>
         <location>/CJYError.jsp</location>
