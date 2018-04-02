@@ -33,7 +33,7 @@ public class CJYClubLoanServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        ServletContext servletContext = this.getServletContext();
+        ServletContext servletContext = this.getServletConfig().getServletContext();
         String path = servletContext.getInitParameter("booksFilePath");
         ArrayList<Book> loanitems;
         if (servletContext.getAttribute("loanitems")==null){
