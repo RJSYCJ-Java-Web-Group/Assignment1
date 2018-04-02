@@ -6,6 +6,7 @@
 package club.cart;
 
 import club.business.Book;
+import club.business.ECart;
 import club.business.ELoan;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -15,12 +16,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Rawa
  */
-public class CJYClubLoanServlet extends HttpServlet {
+public class CJYClearCartServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,19 +36,20 @@ public class CJYClubLoanServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         ServletContext servletContext = this.getServletConfig().getServletContext();
-        String path = servletContext.getInitParameter("booksFilePath");
-        ArrayList<Book> loanitems;
-        if (servletContext.getAttribute("loanitems")==null){
-            loanitems = ELoan.loadItems(path);
+        ArrayList<Book> loanitems = (ArrayList<Book>) servletContext.getAttribute("loanitems");
+        HttpSession session = request.getSession();
+        ECart eCart;
+        if (session.getAttribute("cart")==null){
+            eCart = new ECart();
         } else {
-            loanitems = (ArrayList<Book>)servletContext.getAttribute("loanitems");
+            eCart = (ECart) session.getAttribute("cart");
         }
-           for (Book book : loanitems){
-            System.out.println(book.getDescription());
+        ArrayList<Book> cartItems = eCart.getItems();
+        for (Book book : cartItems){
+            ELoan.addToQOH(loanitems,book.getCode(),book.getQuantity());
         }
-        servletContext.setAttribute("loanitems",loanitems);
-        servletContext.getRequestDispatcher("/CJYELoan.jsp").forward(request,response);
-        
+        session.invalidate();
+        servletContext.getRequestDispatcher("/CJYECart.jsp").forward(request,response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

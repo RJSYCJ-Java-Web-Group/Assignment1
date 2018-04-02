@@ -8,6 +8,10 @@
         <servlet-name>CYJCartServlet</servlet-name>
         <url-pattern>/CJYCart</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CJYClearCartServlet</servlet-name>
+        <url-pattern>/CJYClearCart</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
@@ -35,6 +39,10 @@
     <servlet>
         <servlet-name>CYJCartServlet</servlet-name>
         <servlet-class>club.cart.CJYCartServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CJYClearCartServlet</servlet-name>
+        <servlet-class>club.cart.CJYClearCartServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>CJYDisplayBooksServlet</servlet-name>

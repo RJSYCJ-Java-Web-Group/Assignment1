@@ -10,6 +10,11 @@
 
 <table>
     <tr>
+        <th></th>
+        <th>Your Loan Cart</th>
+        <th></th>
+    </tr>
+    <tr>
         <th>Code</th>
         <th>Description</th>
         <th>Quantity</th>
@@ -33,7 +38,7 @@
         
 <br/>
 <br/>
-<p><a href="">Clear the cart</a></p>
+<p><a href="CJYClearCart">Clear the cart</a></p>
 <p><a href="CJYLoan">Return to eLoan</a></p>
 
 
