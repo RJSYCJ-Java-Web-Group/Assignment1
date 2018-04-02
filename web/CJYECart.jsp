@@ -10,6 +10,11 @@
 
 <table>
     <tr>
+        <th></th>
+        <th>Your Loan Cart</th>
+        <th></th>
+    </tr>
+    <tr>
         <th>Code</th>
         <th>Description</th>
         <th>Quantity</th>

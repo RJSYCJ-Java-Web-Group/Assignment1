@@ -41,6 +41,9 @@ public class CJYClubLoanServlet extends HttpServlet {
         } else {
             loanitems = (ArrayList<Book>)servletContext.getAttribute("loanitems");
         }
+           for (Book book : loanitems){
+            System.out.println(book.getDescription());
+        }
         servletContext.setAttribute("loanitems",loanitems);
         servletContext.getRequestDispatcher("/CJYELoan.jsp").forward(request,response);
         
