@@ -33,7 +33,7 @@
         
 <br/>
 <br/>
-<p><a href="">Clear the cart</a></p>
+<p><a href="CJYClearCart">Clear the cart</a></p>
 <p><a href="CJYLoan">Return to eLoan</a></p>
 
 
