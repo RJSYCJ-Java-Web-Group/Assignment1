@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <servlet>
+        <servlet-name>CJYMemberAdminController</servlet-name>
+        <servlet-class>club.admin.CJYMemberAdminController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CJYClubLoanServlet</servlet-name>
         <url-pattern>/CJYLoan</url-pattern>
@@ -11,6 +15,10 @@
     <servlet-mapping>
         <servlet-name>CJYClearCartServlet</servlet-name>
         <url-pattern>/CJYClearCart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CJYMemberAdminController</servlet-name>
+        <url-pattern>/CJYMemberAdmin</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
