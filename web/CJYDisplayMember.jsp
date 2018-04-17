@@ -21,6 +21,7 @@
     <p>To register another member, click on the back button in your browser or the Return button shown below</p>
     <form action="CJYRegister.jsp">   
         <button type="submit">Return</button>
+        
     </form>
 </section>
 <jsp:include page="/includes/CJYFooter.jsp"/>

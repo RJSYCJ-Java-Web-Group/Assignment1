@@ -14,7 +14,8 @@
     </head>
     <body>
         <h2>Admin : Data Maintenance</h2>
-        <a href="CJYDisplayBooks">Maintain Books</a>
+        <div><a href="CJYDisplayBooks">Maintain Books</a></div>
+        <div><a href="CJYMemberAdmin?action=displayMembers">Display Members</a></div>
     </body>
     <jsp:include page="/includes/CJYFooter.jsp"/>
 </html>
