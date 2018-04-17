@@ -26,7 +26,7 @@
             <td>${member.yearLevel}</td>
             <td>
                 <a href="CJYMemberAdmin?action=addMember&email=${member.emailAddress}">Update</a>
-                <a href="CJYMemberAdmin?action=confirmDelete&email=${member.emailAddress}">Delete</a>
+                <a href="CJYMemberAdmin?action=confirmDeleteMember&email=${member.emailAddress}">Delete</a>
             </td>
             </tr>
         </c:forEach>

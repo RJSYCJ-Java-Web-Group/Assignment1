@@ -57,15 +57,19 @@ public class CJYMemberAdminController extends HttpServlet {
         HttpSession session = request.getSession();
         String url = "";
         String action = request.getParameter("action").isEmpty() ? "displayMembers" : request.getParameter("action");
+        String emailAddress = request.getParameter("email");
         if (action.equals("addMember")){
-            String emailAddress = request.getParameter("email");
             Member member = MemberDB.selectMember(emailAddress);
-            session.setAttribute("member", member);
+            request.setAttribute("member", member);
             url = "/CJYMember.jsp";
         } else if (action.equals("displayMembers")){
             url = "/CJYDisplayMembers.jsp";
             ArrayList<Member> members = MemberDB.selectMembers();
             request.setAttribute("members",members);
+        } else if (action.equals("confirmDeleteMember")){
+            Member member = MemberDB.selectMember(emailAddress);
+            request.setAttribute("member",member);
+            url ="/CJYConfirmMemberDelete.jsp";
         }
        
         context.getRequestDispatcher(url).forward(request,response);
@@ -86,59 +90,74 @@ public class CJYMemberAdminController extends HttpServlet {
         processRequest(request, response);
         ServletContext context = getServletContext();
         HttpSession session = request.getSession();
-        String newline = "<br>";
-        String errorMessage ="Member information is not valid"+newline;
-        String DBaction = "";
+        String action = request.getParameter("action");
         String url ="";
         String emailAddress = request.getParameter("emailAddress");
         Member member;
-        boolean valid = false;
-        if(MemberDB.emailExists(emailAddress)){
-            member = MemberDB.selectMember(emailAddress);   
-            DBaction="update";
-        } else {
-            member = new Member();
-            DBaction="insert";
-        }
-        member.setFullName(request.getParameter("fullName"));
-        member.setEmailAddress(request.getParameter("emailAddress"));
-        member.setPhoneNumber(request.getParameter("phoneNumber"));
-        member.setProgramName(request.getParameter("programName"));
-        if (member.isValid()){
-            valid = true;
-        } else {
-            String regex ="^(.+)@(.+)$";
-            Pattern pattern = Pattern.compile(regex);
-            Matcher matcher = pattern.matcher(member.getEmailAddress());
-            if (member.getFullName().length()==0){
-                errorMessage+="Full name is not valid" + newline;
+        if (action.equals("updateMember")){
+            String newline = "<br>";
+            String errorMessage ="";
+            String DBaction = "";
+            if(MemberDB.emailExists(emailAddress)){
+                member = MemberDB.selectMember(emailAddress);   
+                DBaction="update";
+            } else {
+                member = new Member();
+                DBaction="insert";
             }
-            if (!matcher.matches()){
-                errorMessage+="Email address is not valid"+newline;
+            member.setFullName(request.getParameter("fullName"));
+            member.setEmailAddress(request.getParameter("emailAddress"));
+            member.setPhoneNumber(request.getParameter("phoneNumber"));
+            member.setProgramName(request.getParameter("programName"));
+            if (member.isValid()){
+                if (MemberDB.emailExists(member.getEmailAddress())){
+                    errorMessage="Member information is not valid"+newline;
+                    errorMessage+="Email is already in use"+newline;
+                }
+            } else {
+                errorMessage = "Member information is not valid"+newline;
+                String regex ="^(.+)@(.+)$";
+                Pattern pattern = Pattern.compile(regex);
+                Matcher matcher = pattern.matcher(member.getEmailAddress());
+                if (member.getFullName().length()==0){
+                    errorMessage+="Full name is not valid" + newline;
+                }
+                if (!matcher.matches()){
+                    errorMessage+="Email address is not valid"+newline;
+                }
             }
-        }
-        try {
-            member.setYearLevel(Integer.parseInt(request.getParameter("yearLevel")));
-        } catch (Exception ex){
-            valid = false;
-            System.out.println(ex.getMessage());
-        }
-        
-        if (valid){
-            if (DBaction.equals("update")){
-                MemberDB.update(member);
-            } else if (DBaction.equals("insert")){
-                MemberDB.insert(member);
+            try {
+                member.setYearLevel(Integer.parseInt(request.getParameter("yearLevel")));
+            } catch (Exception ex){
+                errorMessage+="Year level selection is not valid"+newline;
+                System.out.println(ex.getMessage());
+            }
+
+            if (errorMessage.length()==0){
+                if (DBaction.equals("update")){
+                    MemberDB.update(member);
+                } else if (DBaction.equals("insert")){
+                    MemberDB.insert(member);
+                }
+                url="/CJYMemberAdmin?action=displayMembers";
+                response.sendRedirect(String.format("%s%s",request.getContextPath(),url));
+            } else {
+                request.setAttribute("member",member);
+                request.setAttribute("errorMessage",errorMessage);
+                url="/CJYMember.jsp";
+                context.getRequestDispatcher(url).forward(request,response);
+            }
+        } else if (action.equals("deleteMember")){
+            member = MemberDB.selectMember(emailAddress);  
+            if (member!=null){
+                MemberDB.delete(member);
             }
             url="/CJYMemberAdmin?action=displayMembers";
             response.sendRedirect(String.format("%s%s",request.getContextPath(),url));
-        } else {
-            session.setAttribute("member",member);
-            request.setAttribute("errorMessage",errorMessage);
-            url="/CJYMember.jsp";
-            context.getRequestDispatcher(url).forward(request,response);
+        } else if (action.equals("displayMembers")) {
+            url="/CJYMemberAdmin?action=displayMembers";
+            response.sendRedirect(String.format("%s%s",request.getContextPath(),url));
         }
-        
     }
 
     /**
